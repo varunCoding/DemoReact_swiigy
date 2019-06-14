@@ -14,7 +14,7 @@ class Header extends Component {
                             <ul>
                                 <li><a href="search.php" title="Search"><i className="icon-magnifier"></i> Search</a></li>
                                 <li><a href="/offers" title="Offers"><i className="icon-offers-coupon"></i> Offers <span className="new_offers">NEW</span></a></li>
-                                <li><a href="help.php" title=""><i className="icon-help"></i> Help</a></li>
+                                <li><a href="/help" title=""><i className="icon-help"></i> Help</a></li>
                                 <li><a className="signinpop" title=""><i className="icon-user-checkout"></i> Sign In</a></li>
                                 <li><a href="" title=""><span><svg className="cart" viewBox="-1 0 37 32" height="20" width="20" fill="#686b78"><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span class="count">0</span></span> Cart</a></li>
                             </ul>

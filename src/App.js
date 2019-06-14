@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Login from './screens/Login.jsx';
 import RestaurantsList from './screens/RestaurantsList.jsx';
 import Offers from './screens/Offers.jsx';
+import HelpSupport from './screens/HelpSupport';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
             <Route path="/login" component={Login} />
             <Route path="/restlist" component={RestaurantsList} />
             <Route path="/offers" component={Offers} />
+            <Route path="/help" component={HelpSupport} />
             <Redirect from="/" to="/login" />
         </Switch>
     )
