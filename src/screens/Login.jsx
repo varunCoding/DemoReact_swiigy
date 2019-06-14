@@ -2,6 +2,50 @@ import React, { Component, Fragment } from 'react';
 
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            phone: '',
+            rcode: '',
+            name: '',
+            reqphone: '',
+            showPass: false,
+            showtype: "password"
+
+        }
+
+    }
+
+
+
+    showPassword() {
+        var type = this.state.showtype;
+        if (type == "password") {
+            this.setState({
+                showtype: "text"
+            })
+        }
+        else {
+            this.setState({
+                showtype: "password"
+            })
+        }
+
+    }
+
+    handleChange = input => e => {
+        console.log('input', input)
+        console.log('value', e.target.value)
+        this.setState({
+            [input]: e.target.value
+        })
+
+    }
+
+
+
     render() {
         return (
             <Fragment >
@@ -223,11 +267,18 @@ class Login extends Component {
                             <span className="close icon-close-thin"></span>
                             <h2>Login</h2>
                             <p className="caccount">or <a title="create an account">create an account</a></p>
-                            <i className="icon"><img src="images/panner-wrap.webp" alt="Image" /></i>
+                            <i className="icon"><img src="images/panner-wrap.webp" alt="" /></i>
                         </div>
                         <form className="popmiddle">
                             <div className="textbox">
-                                <input type="tel" name="mobile" id="mobile" className="gtext" autocomplete="off" value="" />
+                                <input type="tel"
+                                    name="mobile"
+                                    id="mobile"
+                                    className="gtext"
+                                    autocomplete="off"
+                                    maxlength="10"
+                                    onChange={this.handleChange('phone')}
+                                    value={this.state.phone} />
                                 <label for="mobile" className="labeltext">Phone number</label>
                             </div>
                             <input type="submit" className="button" value="login" />
@@ -240,28 +291,44 @@ class Login extends Component {
                             <span className="close icon-close-thin"></span>
                             <h2>Sign up</h2>
                             <p className="laccount">or <a title="create an account">login to your account</a></p>
-                            <i className="icon"><img src="images/panner-wrap.webp" alt="Image" /></i>
+                            <i className="icon"><img src="images/panner-wrap.webp" alt="" /></i>
                         </div>
                         <form className="popmiddle">
                             <div className="textbox bdrbtm">
-                                <input type="tel" name="smobile" id="smobile" className="gtext" autocomplete="off" value="" />
+                                <input type="tel" name="smobile" id="smobile"
+                                    className="gtext" autocomplete="off"
+                                    maxlength="10"
+                                    onChange={this.handleChange('reqphone')}
+                                    value={this.state.reqphone} />
                                 <label for="smobile" className="labeltext">Phone number</label>
                             </div>
                             <div className="textbox bdrbtm">
-                                <input type="text" name="name" id="name" className="gtext" autocomplete="off" value="" />
+                                <input type="text" name="name" id="name"
+                                    className="gtext" autocomplete="off"
+                                    onChange={this.handleChange('name')}
+                                    value={this.state.name} />
                                 <label for="name" className="labeltext">Name</label>
                             </div>
                             <div className="textbox bdrbtm">
-                                <input type="email" name="email" id="email" className="gtext" autocomplete="off" value="" />
+                                <input type="email" name="email" id="email"
+                                    className="gtext" autocomplete="off"
+                                    onChange={this.handleChange('email')}
+                                    value={this.state.email} />
                                 <label for="email" className="labeltext">Eamil</label>
                             </div>
                             <div className="textbox">
-                                <input type="password" name="password" id="password" className="gtext" value="" />
-                                <label for="password" className="labeltext">Password</label>
-                                <div className="passwordshow">Show</div>
+                                <input type={this.state.showtype} name="password" id="password"
+                                    className="gtext"
+                                    onChange={this.handleChange('password')}
+                                    value={this.state.password} />
+                                <label htmlFor="password" className="labeltext">Password</label>
+                                <div className="passwordshow" onClick={this.showPassword}>Show</div>
                             </div>
                             <div className="textbox ghide">
-                                <input type="text" name="refercode" id="refercode" className="gtext" autocomplete="off" value="" />
+                                <input type="text" name="refercode" id="refercode" className="gtext"
+                                    autocomplete="off"
+                                    onChange={this.handleChange('rcode')}
+                                    value={this.state.rcode} />
                                 <label for="refercode" className="labeltext">Referral code</label>
                             </div>
                             <p className="refer"><a title="Have a referral code?">Have a referral code?</a></p>

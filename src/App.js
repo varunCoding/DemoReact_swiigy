@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
+
 import Login from './screens/Login.jsx';
 import RestaurantsList from './screens/RestaurantsList.jsx';
 import Offers from './screens/Offers.jsx';
@@ -15,6 +16,8 @@ const App = () => {
             <Route path="/help" component={HelpSupport} />
             <Redirect from="/" to="/login" />
         </Switch>
+
+
     )
 }
 

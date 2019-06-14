@@ -258,7 +258,7 @@ class Offers extends Component {
                             <span className="close icon-close-thin"></span>
                             <h2>Login</h2>
                             <p className="caccount">or <a title="create an account">create an account</a></p>
-                            <i className="icon"><img src="images/panner-wrap.webp" alt="Image" /></i>
+                            <i className="icon"><img src="images/panner-wrap.webp" alt="" /></i>
                         </div>
                         <form className="popmiddle">
                             <div className="textbox">
@@ -275,7 +275,7 @@ class Offers extends Component {
                             <span className="close icon-close-thin"></span>
                             <h2>Sign up</h2>
                             <p className="laccount">or <a title="create an account">login to your account</a></p>
-                            <i className="icon"><img src="images/panner-wrap.webp" alt="Image" /></i>
+                            <i className="icon"><img src="images/panner-wrap.webp" alt="" /></i>
                         </div>
                         <form className="popmiddle">
                             <div className="textbox bdrbtm">
